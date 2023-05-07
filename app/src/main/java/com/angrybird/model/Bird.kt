@@ -5,7 +5,7 @@ import android.graphics.Canvas
 import android.graphics.Matrix
 import com.angrybird.Define
 
-class Bird: BaseObject() {
+class Bird: BaseObject {
     private var status:Int = 0
     private var vFlap:Int = 5
     private var currentBitmapId: Int =0
@@ -17,6 +17,10 @@ class Bird: BaseObject() {
                 field.add(Bitmap.createScaledBitmap(bitmap,this.width, this.height, true))
             }
         }
+    constructor()
+    constructor(x:Float, y:Float, width: Int, height: Int):
+        super(x,y,width,height)
+
     fun draw(canvas: Canvas){
         dropBird()
         canvas.drawBitmap(getBitmap(),this.x , this.y , null)
