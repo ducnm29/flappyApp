@@ -6,8 +6,10 @@ import com.angrybird.Define
 import java.util.Random
 
 class Pipe: BaseObject {
+    var isScored:Boolean = false
+
     companion object{
-        var speed:Int = 10*Define.SCREEN_HEIGHT/1080
+        var speed:Int = 20
     }
     constructor()
     constructor(x:Float, y:Float, width: Int, height: Int):

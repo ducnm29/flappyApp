@@ -42,11 +42,7 @@ class Bird: BaseObject {
                 bitmapArr[currentBitmapId].width,  bitmapArr[currentBitmapId].height,
                 matrix, true)
         } else if(dropState > 0){
-            if(dropState<60){
-                matrix.postRotate(-25f + dropState*2)
-            } else {
-                matrix.postRotate(45f)
-            }
+            matrix.postRotate(25f)
             return Bitmap.createBitmap(bitmapArr[currentBitmapId], 0, 0,
                 bitmapArr[currentBitmapId].width,  bitmapArr[currentBitmapId].height,
                 matrix, true)
@@ -58,7 +54,6 @@ class Bird: BaseObject {
      * Auto drop bird
      */
     private fun dropBird(){
-        this.dropState += 0.6f
         this.y += dropState
         if (this.y >Define.SCREEN_HEIGHT-100){
             this.y = Define.SCREEN_HEIGHT.toFloat() - 100
